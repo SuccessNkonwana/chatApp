@@ -37,5 +37,9 @@ export class ProfilePage implements OnInit {
 
 	ngOnInit() {
 	}
-
+	// logout() {
+	// 	this.fireauth.auth.signOut().then(() => {
+	// 	  this.router.navigate(['/login']);
+	// 	})
+	//   }
 }

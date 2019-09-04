@@ -49,7 +49,17 @@ export class UserService {
 
 			return true
 		}
-		return false
+		else if(!user) {
+			this.setUser({
+				username:'',
+				uid: user.uid
+			})
+
+			return true
+		}
+		else{
+			return false
+		}
 	}
 
 	getUID(): string {

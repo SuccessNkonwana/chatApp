@@ -16,7 +16,8 @@ import { UserService } from './user.service';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AuthService } from './auth.service';
 import { ShareModule } from './share.module';
-
+import { Clipboard } from '@ionic-native/clipboard/ngx';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -27,15 +28,18 @@ import { ShareModule } from './share.module';
 	  AngularFireModule.initializeApp(firebaseConfig),
 	  AngularFireAuthModule,
 	  AngularFirestoreModule,
+	
 	  HttpModule,
 	  ShareModule
 	],
   providers: [
     StatusBar,
-    SplashScreen,
+	SplashScreen,
+	Clipboard,
 	{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
 	UserService,
-	AuthService
+	AuthService,
+	SocialSharing,
   ],
   bootstrap: [AppComponent]
 })

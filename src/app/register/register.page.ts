@@ -55,6 +55,7 @@ export class RegisterPage implements OnInit {
 			this.user.setUser({
 				username,
 				uid: res.user.uid
+				
 			})
 
 			this.presentAlert('Success', 'You are registered!')
@@ -63,6 +64,7 @@ export class RegisterPage implements OnInit {
 		} catch(error) {
 			console.dir(error)
 		}
+		 localStorage.setItem('userid',this.afAuth.auth.currentUser.uid);
 	}
 
 }

@@ -1,16 +1,47 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>Profile</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content padding>
 
 	<app-loading *ngIf="!posts"></app-loading>
 
 	<div id="profile-info" *ngIf="username">
+			<header>
+					<ion-row class="row1">
+					  <ion-col>
+						<ion-menu-button color="light"></ion-menu-button>
+					  </ion-col>
+					  <!-- <ion-col>
+						<ion-img src="/assets/chat.png" class="logo"></ion-img>
+					  </ion-col> -->
+					  <ion-col></ion-col>
+					</ion-row>
+				
+					<ion-row>
+					  <ion-col></ion-col>
+					  <ion-col class="ion-text-center">
+							<ion-img class="logo" alt="k"></ion-img>
+						<ion-text color="light">
+						  <h5>User Name</h5>
+						</ion-text>
+						<ion-button type="submit" color="dark" [disabled]="!btn">Updload Picture</ion-button><br>
+					  </ion-col>
+					  <ion-col></ion-col>
+					</ion-row>
+				
+					<ion-row>
+					  <ion-col></ion-col>
+					  <ion-col class="ion-text-center">
+						<!-- <ion-text color="light">2 Policies <br> Active</ion-text> -->
+					  </ion-col>
+					  <ion-col></ion-col>
+					</ion-row>
+				  </header>
 		<ion-grid>
-			<ion-row>
+			<!-- <ion-row>
 				<ion-col size="4" class="user-image">
 					<ion-img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/200x200/center/"></ion-img>
 				</ion-col>
@@ -18,6 +49,17 @@
 					<p>{{ username }}</p>
 					<ion-button shape="round" color="primary" routerLink="/tabs/edit-profile">Edit Profile</ion-button>
 				</ion-col>
+			</ion-row> -->
+			<ion-row>
+					<ion-col></ion-col>
+					<ion-col class="ion-text-center">
+							<ion-img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/200x200/center/"></ion-img>
+					  <ion-text color="light">
+						<h5>{{ username }}</h5>
+					  </ion-text>
+					  <ion-button shape="round" color="primary" routerLink="/tabs/edit-profile">Edit Profile</ion-button><br>
+					</ion-col>
+					<ion-col></ion-col>
 			</ion-row>
 		</ion-grid>
 	</div>

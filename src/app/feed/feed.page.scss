@@ -1,0 +1,57 @@
+#images {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	max-width: 100%;
+	width: 606px;
+}
+
+.image {
+	margin-left: 1px;
+	margin-right: 1px;
+}
+
+.main-image, .user-image {
+	width: 200px;
+	height: 200px;
+}
+
+.chat{
+	display:flex;
+	flex-direction: column;
+	.me{
+	  position:relative;
+	  margin:20px 5px 0px;
+	  max-width: 80%;
+	  align-self: flex-end;
+	  padding:6px 10px 7px;
+	  border-radius: 15px 15px 0px;
+	  background:#576783;
+	  font-size: medium;
+	  line-height: 1.4;
+	}
+	.you{
+	  position:relative;
+	  margin:15px;
+	  max-width: 80%;
+	  align-self: flex-start;
+	  padding:6px 10px 7px;
+	  border-radius: 15px 15px 15px 0px;
+	  background:#c4b7bd;
+	  font-size: medium;
+	  line-height: 1.4;
+	  .name{
+		font-size: small;
+		font-weight: bold;
+		color:#000;
+	  }
+	}
+   }
+   *{
+    // -webkit-user-select: text;
+	user-select: text;
+	-webkit-user-select: auto;
+}
+ion-img{
+	border-radius: 50%;
+}

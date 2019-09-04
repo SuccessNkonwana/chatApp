@@ -1,8 +1,7 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
+
+
+<ion-content>
+		
 
 <ion-content padding>
 	<ion-list>
@@ -19,5 +18,14 @@
 	  
 	  </ion-list>
 
-	  <ion-button fill="solid" expand="block" color="dark" (click)="login()">Login</ion-button>
-</ion-content>
+	   <ion-button fill="solid" expand="block" color="dark" (click)="login()">Login</ion-button>
+	   <!-- <ion-button color="light" (click)=" createAnonymousUser()">SignInAnonymously</ion-button><br> -->
+	   <!-- <ion-button color="light" (click)="facebookLogin()">fb</ion-button><br> -->
+	   <ion-text style="margin-left: 5%;">
+		Dont have an account yet? 
+	   <!-- <ion-text color="success" routerLink="/signup">Sign up</ion-text> -->
+	  </ion-text>
+	  <ion-button color="light" (click)="goToRegisterPage()">Sign up</ion-button><br>
+	<!-- signInAnonymously -->
+	
+	</ion-content>
