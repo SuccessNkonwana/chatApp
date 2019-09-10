@@ -2,7 +2,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 auto;
-	max-width: 100%;
+	max-width: 90%;
 	width: 606px;
 }
 
@@ -12,36 +12,40 @@
 }
 
 .main-image, .user-image {
-	width: 200px;
-	height: 200px;
+	// width: 200px;
+	// height: 200px;
 }
-
+ion-img {
+	width: 100%;
+	height: auto;
+  }
 .chat{
 	display:flex;
 	flex-direction: column;
 	.me{
-	  position:relative;
+	   position:relative;
 	  margin:20px 5px 0px;
 	  max-width: 80%;
 	  align-self: flex-end;
 	  padding:6px 10px 7px;
 	  border-radius: 15px 15px 0px;
 	  background:#576783;
-	  font-size: medium;
+	  font-size: large;
 	  line-height: 1.4;
 	}
 	.you{
-	  position:relative;
+	   position:relative;
 	  margin:15px;
 	  max-width: 80%;
 	  align-self: flex-start;
 	  padding:6px 10px 7px;
 	  border-radius: 15px 15px 15px 0px;
 	  background:#c4b7bd;
-	  font-size: medium;
+	  font-size: large;
 	  line-height: 1.4;
 	  .name{
-		font-size: small;
+		// font-size: large;
+		font-size: large;
 		font-weight: bold;
 		color:#000;
 	  }
@@ -52,6 +56,27 @@
 	user-select: text;
 	-webkit-user-select: auto;
 }
-ion-img{
-	border-radius: 50%;
+// ion-img{
+// 	border-radius: 50%;
+// }
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------
+
+.img-circle {
+    
+        // position: relative;
+        border-radius: 50%;
+        overflow: hidden;
+        // width: 300px;
+        // height: 300px;
+        // display: inline-block;
+        border : 1px solid black;
+    
+}
+*{
+	font-size: large;
+}
+.image-upload > input
+{
+    display: none;
 }

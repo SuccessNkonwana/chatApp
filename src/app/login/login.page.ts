@@ -45,16 +45,20 @@ export class LoginPage implements OnInit {
 	
   
 	ngOnInit() {
-	//   this.validations_form = this.formBuilder.group({
-	// 	email: new FormControl('', Validators.compose([
-	// 	  Validators.required,
-	// 	//   Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-	// 	])),
-	// 	password: new FormControl('', Validators.compose([
-	// 	  Validators.minLength(5),
-	// 	  Validators.required
-	// 	])),
-	//   });
+		this.validations_form = this.formBuilder.group({
+			email: new FormControl('', Validators.compose([
+			  Validators.required,
+			//   Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+			])),
+			password: new FormControl('', Validators.compose([
+			  Validators.minLength(5),
+			  Validators.required
+			])),
+			username: new FormControl('', Validators.compose([
+			  Validators.minLength(5),
+			  Validators.required
+			])),
+		  });
 	}
 	//Copy Event
 	copyText(){
@@ -81,16 +85,20 @@ export class LoginPage implements OnInit {
 	 
   
    
-	validation_messages = {
-	  'email': [
-		{ type: 'required', message: 'Email is required.' },
-		{ type: 'pattern', message: 'Please enter a valid email.' }
-	  ],
-	  'password': [
-		{ type: 'required', message: 'Password is required.' },
-		{ type: 'minlength', message: 'Password must be at least 5 characters long.' }
-	  ]
-	};
+	  validation_messages = {
+		'email': [
+		  { type: 'required', message: 'Email is required.' },
+		  { type: 'pattern', message: 'Enter a valid email.' }
+		],
+		'password': [
+		  { type: 'required', message: 'Password is required.' },
+		  { type: 'minlength', message: 'Password must be at least 5 characters long.' }
+		],
+		'username': [
+		 { type: 'required', message: 'Username is required.' },
+		 { type: 'minlength', message: 'Username must be at least 5 characters long.' }
+	   ]
+	  };
 	
 	async login() {
 		const { username, password } = this

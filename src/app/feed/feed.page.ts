@@ -1,10 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+// import { Component, OnInit, } from '@angular/core';
 import { AngularFirestoreDocument, AngularFirestore } from '@angular/fire/firestore';
 import { UserService } from '../user.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { Http } from '@angular/http';
+import { AlertController } from '@ionic/angular';
 @Component({
   selector: 'app-feed',
   templateUrl: './feed.page.html',
@@ -19,8 +22,18 @@ export class FeedPage implements OnInit {
   uid
 	username: string
 	profilePic: string
-  text: string = "";
+  text: any;
   chatRef;
+  imageURL: string
+	desc: string
+  noFace: boolean = false
+  busy: boolean = false
+
+  postID: string
+	effect: string = ''
+	post
+	postReference: AngularFirestoreDocument
+  
   constructor(private afs: AngularFirestore,
     private afAuth: AngularFireAuth, 
     private user: UserService, 
@@ -58,9 +71,10 @@ export class FeedPage implements OnInit {
         this.text='';
         
        
-    }}
+    }
   
-    
+  }
+  
     share(chat){
       this.socialSharing.share(chat.Message).then(() => {
        
@@ -68,6 +82,8 @@ export class FeedPage implements OnInit {
         
       });
     }
+  
 	ngOnInit() {
+   
 	}
 }

@@ -1,13 +1,12 @@
 
 <ion-content padding>
 
-	<!-- <app-loading *ngIf="!posts"></app-loading> -->
   <div id="profile-info" *ngIf="username">
       <ion-grid>
         <ion-row>
-          <ion-col  class="image-cropper">
+          <ion-col  class="user-image">
               
-            <ion-img src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/200x200/center/"></ion-img>
+            <ion-img class="img-circle" src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/200x200/center/"></ion-img>
             <!-- <ion-button shape="round" color="primary" routerLink="/tabs/edit-profile">Edit Profile</ion-button> -->
           </ion-col>
           <ion-col  class="user-image">
@@ -18,12 +17,12 @@
         </ion-row>
       </ion-grid>
     </div>
-	
-  <div class="chat" *ngFor="let chat of chatRef | async" (click)="share(chat)">
-    <div class="me" *ngIf ="uid==chat.UserID">
-     
+	<br>
+  <div class="chat" *ngFor="let chat of chatRef | async " (click)="share(chat)">
+    <div class="me" *ngIf ="uid==chat.UserID ">
       {{chat.Message}}
-      </div>
+    </div>
+
       <div class="you"*ngIf ="uid != chat.UserID">
         <span class="name">
           {{ chat.Name}}
@@ -33,16 +32,13 @@
           </div>
           </div>
 
-	<!-- <div id="images" *ngIf="posts">
-		<div class="image" *ngFor="let post of posts">
-			<img (click)="goTo(post)" class="main-image" src="https://ucarecdn.com/{{ post }}/-/scale_crop/200x200/center/" />
-		</div>
-	</div> -->
-
 </ion-content>
 <ion-footer>
   <ion-item>
+      
     <ion-input placeholder="type  a message"[(ngModel)]="text"></ion-input>
+    
+      
     <ion-button (click)="send()" fill="clear"icon-only slot="end">
       <ion-icon name="send"></ion-icon>
     </ion-button>
